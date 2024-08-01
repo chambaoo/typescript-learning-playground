@@ -169,13 +169,80 @@ console.log(shirt2);
 // type alias
 // -------------------------------
 
+// 型を変数のように扱う
+type ClothSize = 'small' | 'medium' | 'large';
+
+const shirt3: {
+    color: string,
+    size: ClothSize, // 型注釈をすることで後から指定された値の範囲で代入が可能になる・
+} = {
+    color: 'white',
+    size: 'small'
+}
+
+shirt3.color = 'yellow';
+shirt3.size = 'medium';
+console.log(shirt3);
+
+
 // -------------------------------
 // function
 // -------------------------------
+// パラメータには必ず型注釈を付ける。そうしないとanyになってしまい、危険。
+function add(num1: number, num2: number): number {
+    return num1 + num2;
+}
+
+console.log(add(1, 3));
 
 // -------------------------------
 // void
 // -------------------------------
+function sayHello(): void {
+    console.log('Hello.');
+}
+function sayHelloUndefined(): undefined {
+    console.log('Hello.');
+    // undefinedを使用すること自体、そもそも非推奨ではある。
+    // return がないときは戻り値にundefinedは、使えない。
+    // TODO: しかし、、なぜかなくてもコンパイルは成功しているので、versionによるものかもしれない。要調査。
+    return;
+}
+
+console.log(sayHello()); // 戻り値はundefined型になる
+
+// undefined
+let tmp1: undefined;
+let tmp2; // この場合は、any型
+
+
+// -------------------------------
+// undefined | null
+// -------------------------------
+let tmpUndefined: undefined = undefined;
+let tmpNull: null = null;
+// let tmpUndefined: undefined = 11; // Type '11' is not assignable to type 'undefined'.
+// let tmpNull: null = 22; // Type '22' is not assignable to type 'null'.
+
+
+// -------------------------------
+// 関数の型注釈
+// -------------------------------
+// 関数名: (引数) => 戻り値の型 = 関数
+const add2: (n1: number, n2: number) => number = add;
+
+// 無名関数
+const add3: (n1: number, n2: number) => number = function (num1, num2) { return num1 + num2 };
+// TODO: 引数の型注釈は、どちらにも書いてもいいが、片方だけで十分。と聞いたが、
+// 以下は、n1, n2の引数がany型になっている。versionによるかもしれない。
+const add4: (n1, n2) => number = function (num1: number, num2: number) { return num1 + num2 };
+
+// アロー関数
+// 引数が一つの場合は、()は不要。しかし、any型になるので、推奨しない。
+const double1 = number =>  number * 2; // Parameter 'number' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+const double2 = (number: number): number =>  number * 2;
+const double3 = (number: number): number =>  number * 2;
 
 // -------------------------------
 // callback

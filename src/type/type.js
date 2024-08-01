@@ -130,15 +130,60 @@ var shirt2 = {
 shirt2.color = 'blue';
 shirt2.size = 'large';
 console.log(shirt2);
-// -------------------------------
-// type alias
-// -------------------------------
+var shirt3 = {
+    color: 'white',
+    size: 'small'
+};
+shirt3.color = 'yellow';
+shirt3.size = 'medium';
+console.log(shirt3);
 // -------------------------------
 // function
 // -------------------------------
+// パラメータには必ず型注釈を付ける。そうしないとanyになってしまい、危険。
+function add(num1, num2) {
+    return num1 + num2;
+}
+console.log(add(1, 3));
 // -------------------------------
 // void
 // -------------------------------
+function sayHello() {
+    console.log('Hello.');
+}
+function sayHelloUndefined() {
+    console.log('Hello.');
+    // undefinedを使用すること自体、そもそも非推奨ではある。
+    // return がないときは戻り値にundefinedは、使えない。
+    // TODO: しかし、、なぜかなくてもコンパイルは成功しているので、versionによるものかもしれない。要調査。
+    return;
+}
+console.log(sayHello()); // 戻り値はundefined型になる
+// undefined
+var tmp1;
+var tmp2; // この場合は、any型
+// -------------------------------
+// undefined | null
+// -------------------------------
+var tmpUndefined = undefined;
+var tmpNull = null;
+// let tmpUndefined: undefined = 11; // Type '11' is not assignable to type 'undefined'.
+// let tmpNull: null = 22; // Type '22' is not assignable to type 'null'.
+// -------------------------------
+// 関数の型注釈
+// -------------------------------
+// 関数名: (引数) => 戻り値の型 = 関数
+var add2 = add;
+// 無名関数
+var add3 = function (num1, num2) { return num1 + num2; };
+// TODO: 引数の型注釈は、どちらにも書いてもいいが、片方だけで十分。と聞いたが、
+// 以下は、n1, n2の引数がany型になっている。versionによるかもしれない。
+var add4 = function (num1, num2) { return num1 + num2; };
+// アロー関数
+// 引数が一つの場合は、()は不要。しかし、any型になるので、推奨しない。
+var double1 = function (number) { return number * 2; }; // Parameter 'number' implicitly has an 'any' type, but a better type may be inferred from usage.
+var double2 = function (number) { return number * 2; };
+var double3 = function (number) { return number * 2; };
 // -------------------------------
 // callback
 // -------------------------------
