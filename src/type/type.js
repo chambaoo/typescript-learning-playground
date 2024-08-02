@@ -187,7 +187,30 @@ var double3 = function (number) { return number * 2; };
 // -------------------------------
 // callback
 // -------------------------------
-// -------------------------------
+function double4(num, cb) {
+    var doubleNum = cb(num * 2);
+    console.log(doubleNum);
+}
+double4(27, function (doubleNum) {
+    return doubleNum;
+});
+function doubleAndHandle1(num, callback) {
+    var doubleNum = num * 2;
+    var callbackResult1 = callback(doubleNum);
+    console.log(callbackResult1);
+}
+doubleAndHandle1(3, function (doubleNumber) {
+    return doubleNumber * 2;
+});
+// callback関数の戻り値をvoidにすると、引数で渡されるcallback関数の定義によらず、voidが戻り値となる。
+function doubleAndHandle2(num, callback) {
+    var doubleNum = num * 2;
+    var callbackResult2 = callback(doubleNum); // const callbackResult2: void
+    console.log(callbackResult2);
+}
+doubleAndHandle2(3, function (doubleNumber) {
+    return doubleNumber * 2;
+});
 // -------------------------------
 // -------------------------------
 // -------------------------------

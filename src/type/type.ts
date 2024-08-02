@@ -247,8 +247,35 @@ const double3 = (number: number): number =>  number * 2;
 // -------------------------------
 // callback
 // -------------------------------
+function double4(num: number, cb: (num: number) => number): void {
+    const doubleNum = cb(num * 2);
 
-// -------------------------------
+    console.log(doubleNum);
+}
+double4(27, doubleNum => {
+    return doubleNum;
+} );
+
+function doubleAndHandle1(num: number, callback: (num: number) => number): void {
+    const doubleNum = num * 2;
+    const callbackResult1 = callback(doubleNum);
+    console.log(callbackResult1);
+}
+
+doubleAndHandle1(3, doubleNumber => {
+    return doubleNumber * 2;
+})
+
+// callback関数の戻り値をvoidにすると、引数で渡されるcallback関数の定義によらず、voidが戻り値となる。
+function doubleAndHandle2(num: number, callback: (num: number) => void): void {
+    const doubleNum = num * 2;
+    const callbackResult2 = callback(doubleNum); // const callbackResult2: void
+    console.log(callbackResult2);
+}
+
+doubleAndHandle2(3, doubleNumber => {
+    return doubleNumber * 2;
+})
 
 // -------------------------------
 // -------------------------------
