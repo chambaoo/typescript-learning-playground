@@ -278,7 +278,22 @@ doubleAndHandle2(3, doubleNumber => {
 })
 
 // -------------------------------
+// unknown
 // -------------------------------
+// any に近いが、any より少し厳しい型と考える
+
+let unknownInput1: unknown;
+let anyInput1: any;
+
+unknownInput1 = 'hello';
+unknownInput1 = 1;
+unknownInput1 = true;
+
+// 型を定義した後で、unknown型を代入することができない。
+// any の場合は、定義を破壊して any に変えてしまう特徴があったが、unknown ではそうならない。
+let text: string;
+// text = unknownInput1; // Type 'unknown' is not assignable to type 'string'.
+
 // -------------------------------
 // -------------------------------
 // -------------------------------

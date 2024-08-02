@@ -212,7 +212,18 @@ doubleAndHandle2(3, function (doubleNumber) {
     return doubleNumber * 2;
 });
 // -------------------------------
+// unknown
 // -------------------------------
+// any に近いが、any より少し厳しい型と考える
+var unknownInput1;
+var anyInput1;
+unknownInput1 = 'hello';
+unknownInput1 = 1;
+unknownInput1 = true;
+// 型を定義した後で、unknown型を代入することができない。
+// any の場合は、定義を破壊して any に変えてしまう特徴があったが、unknown ではそうならない。
+var text;
+// text = unknownInput1; // Type 'unknown' is not assignable to type 'string'.
 // -------------------------------
 // -------------------------------
 // -------------------------------
