@@ -295,7 +295,36 @@ let text: string;
 // text = unknownInput1; // Type 'unknown' is not assignable to type 'string'.
 
 // -------------------------------
+// never
+//   ----> TypeScript ver.2から実装
 // -------------------------------
+// 決して何も返さない。という型
+
+function error1(message: string): never {
+    throw new Error(message);
+}
+
+// 何も返さず、エラーを発生させて終了するようなとき、never を使う
+// console.log(error1('error ocurred.'));
+// 他には、while(true)などの無限に続くような処理で、never を使う
+
+
+// 型推論を使った場合、書き方によって戻り値の型が変わる
+// 通常の関数宣言では、戻り値は void として推論される。これは、後方互換性のため。
+function error2(message: string) { // function error2(message: string): void
+    throw new Error(message);
+}
+
+// 関数式では、戻り値は never として推論される。
+const error3 = function error3(message: string) { // const error3: (message: string) => never
+    throw new Error(message);
+}
+
+// アロー関数では、戻り値は never として推論される。
+const error4 = (message: string) => { // const error4: (message: string) => never
+    throw new Error(message);
+} 
+
 // -------------------------------
 // -------------------------------
 // -------------------------------
