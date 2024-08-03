@@ -13,3 +13,14 @@ JavaScript : 動的型付け
 
 #### memo
 enum は、jsにコンパイルされるときにオブジェクトが作られている。
+
+
+## compile
+
+### watch mode
+
+```sh
+tsc src/type/type.ts --watch
+tsc src/type/type.ts -w
+```
+
