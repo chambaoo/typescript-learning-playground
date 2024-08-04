@@ -28,3 +28,19 @@ tsc src/type/type.ts -w
 >
 > WSL2で watch option を使用するも、ファイル保存時の変更検知が働かない。
 > ローカルにインストールしている Git Bash で watch option が正常に使用できることを確認。
+
+
+複数ファイルの手動コンパイル
+
+```sh
+tsc src/type/type.ts src/compile/compile.ts
+```
+
+
+### tsconfig
+
+- tsconfig.json を作成する
+
+```sh
+tsc --init
+```

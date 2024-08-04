@@ -235,11 +235,11 @@ const add2: (n1: number, n2: number) => number = add;
 const add3: (n1: number, n2: number) => number = function (num1, num2) { return num1 + num2 };
 // TODO: 引数の型注釈は、どちらにも書いてもいいが、片方だけで十分。と聞いたが、
 // 以下は、n1, n2の引数がany型になっている。versionによるかもしれない。
-const add4: (n1, n2) => number = function (num1: number, num2: number) { return num1 + num2 };
+// const add4: (n1, n2) => number = function (num1: number, num2: number) { return num1 + num2 };
 
 // アロー関数
 // 引数が一つの場合は、()は不要。しかし、any型になるので、推奨しない。
-const double1 = number =>  number * 2; // Parameter 'number' implicitly has an 'any' type, but a better type may be inferred from usage.
+// const double1 = number =>  number * 2; // Parameter 'number' implicitly has an 'any' type, but a better type may be inferred from usage.
 
 const double2 = (number: number): number =>  number * 2;
 const double3 = (number: number): number =>  number * 2;
