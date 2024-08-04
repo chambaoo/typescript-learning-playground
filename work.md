@@ -44,3 +44,34 @@ tsc src/type/type.ts src/compile/compile.ts
 ```sh
 tsc --init
 ```
+
+```sh
+tsc -w
+```
+
+
+#### .d.ts
+
+型定義ファイルを出力する。自作ライブラリの使い方、ドキュメントを作成するオプション。
+
+```json
+    /* Emit */
+    // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
+    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+```
+
+#### sourceMap
+
+TypeScript をブラウザで解釈したいとき
+jsファイルに以下のようなコメントが追記される。ブラウザ上でTypeScriptのデバッグなどをできるようになる。
+//# sourceMappingURL=compile.js.map
+
+##### defer
+This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
+
+Scripts with the defer attribute will prevent the DOMContentLoaded event from firing until the script has loaded and finished evaluating.
+
+This attribute must not be used if the src attribute is absent (i.e. for inline scripts), in this case it would have no effect.
+
+To achieve a similar effect for dynamically inserted scripts use async="false" instead. Scripts with the defer attribute will execute in the order in which they appear in the document.
+

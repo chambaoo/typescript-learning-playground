@@ -250,3 +250,4 @@ const error4 = (message) => {
     throw new Error(message);
 };
 console.log('type complete.');
+//# sourceMappingURL=type.js.map
