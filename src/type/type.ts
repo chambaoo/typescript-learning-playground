@@ -326,3 +326,4 @@ const error4 = (message: string) => { // const error4: (message: string) => neve
 } 
 
 console.log('type complete.');
+
