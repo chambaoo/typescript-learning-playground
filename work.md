@@ -24,3 +24,7 @@ tsc src/type/type.ts --watch
 tsc src/type/type.ts -w
 ```
 
+> **Note** ファイルの変更検知ができない
+>
+> WSL2で watch option を使用するも、ファイル保存時の変更検知が働かない。
+> ローカルにインストールしている Git Bash で watch option が正常に使用できることを確認。
