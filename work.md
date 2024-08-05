@@ -91,3 +91,12 @@ strict: true にした場合、strict項目のすべてがtrueになる。
     // "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
     // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
 ```
+
+## class
+
+- クラスが生成するオブジェクトの型も同時に作っている。
+- getter / setter の戻り値の型が同一でない場合、コンパイルエラーになる。
+
+
+## notes
+// アロー関数はパフォーマンスが落ちる？
