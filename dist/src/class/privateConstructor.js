@@ -48,5 +48,5 @@ class Teacher6 extends Person15 {
 }
 const singleTeacher = Teacher6.getInstance();
 const doubleTeacher = Teacher6.getInstance();
-console.log(singleTeacher === doubleTeacher);
+console.log(singleTeacher === doubleTeacher); // true
 //# sourceMappingURL=privateConstructor.js.map
