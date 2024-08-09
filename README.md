@@ -1,5 +1,10 @@
 # typescript-learning-playground
 
+## Setup TypeScript
+
+```sh
+npm i -g typescript
+```
 
 ## tsc TypeScriptコンパイラ
 
