@@ -27,9 +27,8 @@ const obj1 = {
     name: 'Sara',
     age: 28
 };
-// const obj1: {
+// type SaraType = {
 //     readonly name: "Sara";
 //     readonly age: 28;
 // }
-// enum の代用にもできる。
 //# sourceMappingURL=typeAssertion.js.map
