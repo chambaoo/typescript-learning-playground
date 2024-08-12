@@ -44,3 +44,10 @@ const obj1 = {
 // }
 
 // enum の代用にもできる。
+
+// typeof で値から型を抽出できる
+type SaraType = typeof obj1;
+// type SaraType = {
+//     readonly name: "Sara";
+//     readonly age: 28;
+// }
