@@ -7,8 +7,9 @@ const postCard = {
         body: ''
     }
 };
+// optional chaining & nullish coalescing
 console.log(postCard?.size);
-console.log(postCard?.content?.title);
+console.log(postCard?.content?.title); // 'postCard.content' は 'undefined' の可能性があります。
 console.log(postCard?.content?.subtitle ?? 'サブタイトルなし');
 console.log(postCard?.content?.body ?? '本文なし'); // 出力は「」空文字
 console.log(postCard?.content?.body ? postCard?.content?.body : '本文なし'); // 出力は「本文なし」
