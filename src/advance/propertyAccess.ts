@@ -27,3 +27,12 @@ console.log(postCard?.content?.body ?? '本文なし'); // 出力は「」空文
 console.log(postCard?.content?.body ? postCard?.content?.body : '本文なし'); // 出力は「本文なし」
 console.log(postCard?.content?.body || '本文なし'); // 出力は「本文なし」
 
+
+// LookUp型 (インデックスアクセス型)
+type content = Card['content'];
+
+// type content = {
+//     title?: string;
+//     subtitle?: string;
+//     body?: string;
+// } | undefined
