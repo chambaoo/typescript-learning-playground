@@ -19,4 +19,11 @@ console.log(postCard?.content?.body || '本文なし'); // 出力は「本文な
 //     subtitle?: string;
 //     body?: string;
 // } | undefined
+// Rest Parameter with tupple
+function functionWithTupple1(...args) { }
+;
+function functionWithTupple2(...args) { }
+;
+function functionWithTupple3(...args) { }
+;
 //# sourceMappingURL=propertyAccess.js.map

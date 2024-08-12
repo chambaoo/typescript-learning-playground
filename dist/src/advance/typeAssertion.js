@@ -17,4 +17,19 @@ document.getElementById('input').value = 'input value insert';
 // Non-null assertion operator
 // null or undefined ではないことを宣言する
 const input = document.getElementById('input'); // const input: HTMLElement
+// Const Assertion
+const milk = 'milk'; // const milk: "milk"
+let drink = milk; // let drink: "milk"
+const array1 = [20, 30];
+// as const を使用すると tupple になる
+const array2 = [20, 30]; // const array2: readonly [20, 30]
+const obj1 = {
+    name: 'Sara',
+    age: 28
+};
+// const obj1: {
+//     readonly name: "Sara";
+//     readonly age: 28;
+// }
+// enum の代用にもできる。
 //# sourceMappingURL=typeAssertion.js.map

@@ -36,3 +36,9 @@ type content = Card['content'];
 //     subtitle?: string;
 //     body?: string;
 // } | undefined
+
+
+// Rest Parameter with tupple
+function functionWithTupple1(...args: [number, string, boolean?, ...number[]]) {};
+function functionWithTupple2(...args: [age: number, name: string, hasPet?: boolean, ...scores: number[]]) {};
+function functionWithTupple3(...args: readonly [age: number, name: string, hasPet?: boolean, ...scores: number[]]) {};
