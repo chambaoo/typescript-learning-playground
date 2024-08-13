@@ -144,3 +144,61 @@ interface ResponseData<T extends { items: string[], total: number } = any> {
 
 let response1: ResponseData<{ items: [], total: 0}>; // ジェネリック型 'ResponseData<T>' には 1 個の型引数が必要です。
 let response2: ResponseData;
+
+// -------------------------------
+// mapped type
+// -------------------------------
+// utility の内部で使用されていることがある。
+
+type MappedTypes1 = {
+    [P in 'Rabbit' | 'Dog' | 'Bird']: P
+}
+// type MappedTypes1 = {
+//     Rabbit: "Rabbit";
+//     Dog: "Dog";
+//     Bird: "Bird";
+// }
+
+type MappedTypes2 = {
+    [P in 'Rabbit' | 20 | 'Bird']: P
+}
+// type MappedTypes2 = {
+//     Rabbit: "Rabbit";
+//     Bird: "Bird";
+//     20: 20;
+// }
+
+interface MapVegitables {
+    pumpkin: string;
+    tomato: string;
+    readonly cucamber: string;
+}
+
+type MappedTypes3 = {
+    [P in keyof MapVegitables]: string
+}
+
+let temp: keyof MapVegitables;
+
+
+type MappedTypes4 = {
+    readonly [P in keyof MapVegitables]?: string
+}
+// type MappedTypes4 = {
+//     readonly pumpkin?: string | undefined;
+//     readonly tomato?: string | undefined;
+//     readonly cucamber?: string | undefined;
+// }
+
+type MappedTypes5 = {
+    -readonly [P in keyof MapVegitables]?: string
+}
+// -readonly でreadonlyの指定が消える
+// type MappedTypes5 = {
+//     pumpkin?: string | undefined;
+//     tomato?: string | undefined;
+//     cucamber?: string | undefined;
+// }
+
+
+

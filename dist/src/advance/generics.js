@@ -77,4 +77,11 @@ const sports1 = ['soccer', 'baseball', 'basketball'];
 const sports2 = ['soccer', 'baseball', 'basketball'];
 let response1; // ジェネリック型 'ResponseData<T>' には 1 個の型引数が必要です。
 let response2;
+let temp;
+// -readonly でreadonlyの指定が消える
+// type MappedTypes5 = {
+//     pumpkin?: string | undefined;
+//     tomato?: string | undefined;
+//     cucamber?: string | undefined;
+// }
 //# sourceMappingURL=generics.js.map
