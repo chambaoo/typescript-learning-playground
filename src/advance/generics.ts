@@ -148,6 +148,7 @@ let response2: ResponseData;
 // -------------------------------
 // mapped type
 // -------------------------------
+// 型のfor文
 // utility の内部で使用されていることがある。
 
 type MappedTypes1 = {
@@ -200,5 +201,38 @@ type MappedTypes5 = {
 //     cucamber?: string | undefined;
 // }
 
+
+
+
+// -------------------------------
+// conditional type
+// -------------------------------
+// 型のif文
+// 左側が右側に代入できるか？
+
+type ContditionalTypes1 = 'tomato' extends string ? number : boolean;
+// type ContditionalTypes1 = number
+
+type ContditionalTypes2 = string extends 'tomato' ? number : boolean;
+// type ContditionalTypes2 = boolean
+
+type ContditionalTypesInfer1 = { tomato: 'tomato' } extends { tomato: infer R } ? R : boolean;
+// type ContditionalTypesInfer1 = "tomato"
+
+type DistributiveConditionalTypes1 = ( 'tomato' | 'pumpkin' ) extends 'tomato' ? number : boolean;
+// type DistributiveConditionalTypes1 = boolean
+
+
+type DistributiveConditionalTypes2<T> = ( 'tomato' | 'pumpkin' ) extends 'tomato' ? number : boolean;
+// type DistributiveConditionalTypes2<T> = boolean
+let distributive: DistributiveConditionalTypes2<'tomato' | 'pumpkin'>
+
+// library でも使用されている distributive conditional types
+// e.g. 1. NonNullalbe
+let nonNullable: NonNullable<string | null>
+// let nonNullable: string
+
+// e.g. 2. ReturnType
+// type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any
 
 

@@ -78,10 +78,12 @@ const sports2 = ['soccer', 'baseball', 'basketball'];
 let response1; // ジェネリック型 'ResponseData<T>' には 1 個の型引数が必要です。
 let response2;
 let temp;
-// -readonly でreadonlyの指定が消える
-// type MappedTypes5 = {
-//     pumpkin?: string | undefined;
-//     tomato?: string | undefined;
-//     cucamber?: string | undefined;
-// }
+// type DistributiveConditionalTypes2<T> = boolean
+let distributive;
+// library でも使用されている distributive conditional types
+// e.g. 1. NonNullalbe
+let nonNullable;
+// let nonNullable: string
+// e.g. 2. ReturnType
+// type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any
 //# sourceMappingURL=generics.js.map
