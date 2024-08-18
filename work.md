@@ -117,3 +117,7 @@ strict: true にした場合、strict項目のすべてがtrueになる。
 
 ## notes
 // アロー関数はパフォーマンスが落ちる？
+
+
+- constructor signiture
+  - new():

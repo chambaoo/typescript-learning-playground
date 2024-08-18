@@ -25,4 +25,22 @@ Terminal = __decorate([
 const terminal1 = new Terminal();
 const terminal2 = new Terminal();
 const terminal3 = new Terminal();
+// decorator factory
+// 引数を取るデコレーターを宣言できる
+function LoggingFactory(message) {
+    return function (constructor) {
+        console.log('Log factory ... ');
+        console.log(message);
+        console.log(constructor);
+    };
+}
+let TerminalEmulator = class TerminalEmulator {
+    constructor() {
+        console.log('terminal instance generated.');
+    }
+};
+TerminalEmulator = __decorate([
+    LoggingFactory('terminal emulate')
+], TerminalEmulator);
+// デコレーターの使い道
 //# sourceMappingURL=decorator.js.map

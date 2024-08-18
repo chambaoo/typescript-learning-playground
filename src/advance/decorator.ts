@@ -22,3 +22,26 @@ class Terminal {
 const terminal1 = new Terminal();
 const terminal2 = new Terminal();
 const terminal3 = new Terminal();
+
+
+// decorator factory
+// 引数を取るデコレーターを宣言できる
+
+function LoggingFactory(message: string) {
+    return function (constructor: Function) {
+        console.log('Log factory ... ');
+        console.log(message);
+        console.log(constructor);
+    }
+}
+
+@LoggingFactory('terminal emulate')
+class TerminalEmulator {
+    constructor() {
+        console.log('terminal instance generated.');
+    }
+}
+
+// デコレーターの使い道
+
+
