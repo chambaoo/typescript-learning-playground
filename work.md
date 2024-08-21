@@ -118,6 +118,8 @@ strict: true にした場合、strict項目のすべてがtrueになる。
 ## notes
 // アロー関数はパフォーマンスが落ちる？
 
-
 - constructor signiture
   - new():
+
+- generics
+  - 型を変数として扱うことができる
